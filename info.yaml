@@ -15,11 +15,11 @@ project:
 documentation: 
   author:       "proppy"      # Your name
   discord:      "proppy"      # Your discord handle
-  title:        "bit population count"      # Project title
+  title:        "XLS: bit population count"      # Project title
   description:  "Count bits set in the input."      # Short description of what your project does
   how_it_works: "https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetParallel"      # Longer description of how the project works
   how_to_test:  "Pull up input bits, check that output bits represent the count."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  "LEDs and resistors"      # Describe any external hardware needed
+  external_hw:  "LEDs and resistors"      # Describe any external hardware neede
   language:     "XLS" # other examples include Verilog, Amaranth, VHDL, etc
   doc_link:     "https://github.com/proppy/tt02-xls-popcount/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     0       # Clock frequency in Hz (if required)
