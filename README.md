@@ -4,7 +4,7 @@
 
 TinyTapeout design implementing a [Population count](https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetParallel) using [XLS: Accelerated HW Synthesis](https://github.com/google/xls) toolkit .
 
-![](gds_render.svg)
+![](popcount.svg)
 
 ## Resources
 
