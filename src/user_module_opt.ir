@@ -3,5 +3,26 @@ package user_module
 file_number 0 "fake_file.x"
 
 top fn __user_module__user_module(io_in: bits[8]) -> bits[8] {
-  ret io_in: bits[8] = param(name=io_in)
+  literal.62: bits[1] = literal(value=0, id=62, pos=[(0,5,18)])
+  bit_slice.63: bits[7] = bit_slice(io_in, start=1, width=7, id=63, pos=[(0,5,18)])
+  concat.64: bits[8] = concat(literal.62, bit_slice.63, id=64, pos=[(0,5,18)])
+  literal.65: bits[8] = literal(value=85, id=65, pos=[(0,5,29)])
+  and.66: bits[8] = and(concat.64, literal.65, id=66, pos=[(0,5,24)])
+  io_in__1: bits[8] = sub(io_in, and.66, id=67, pos=[(0,5,12)])
+  literal.90: bits[1] = literal(value=0, id=90, pos=[(0,5,18)])
+  bit_slice.68: bits[6] = bit_slice(io_in__1, start=2, width=6, id=68, pos=[(0,6,30)])
+  bit_slice.69: bits[7] = bit_slice(io_in__1, start=0, width=7, id=69, pos=[(0,5,12)])
+  literal.70: bits[7] = literal(value=51, id=70, pos=[(0,6,18)])
+  concat.71: bits[7] = concat(literal.90, bit_slice.68, id=71, pos=[(0,6,30)])
+  literal.92: bits[7] = literal(value=51, id=92, pos=[(0,6,18)])
+  and.72: bits[7] = and(bit_slice.69, literal.70, id=72, pos=[(0,6,13)])
+  and.73: bits[7] = and(concat.71, literal.92, id=73, pos=[(0,6,36)])
+  add.74: bits[7] = add(and.72, and.73, id=74, pos=[(0,6,24)])
+  literal.91: bits[1] = literal(value=0, id=91, pos=[(0,5,18)])
+  bit_slice.75: bits[3] = bit_slice(add.74, start=4, width=3, id=75, pos=[(0,7,10)])
+  bit_slice.76: bits[4] = bit_slice(add.74, start=0, width=4, id=76, pos=[(0,6,24)])
+  concat.77: bits[4] = concat(literal.91, bit_slice.75, id=77, pos=[(0,7,10)])
+  literal.78: bits[4] = literal(value=0, id=78, pos=[(0,7,10)])
+  add.79: bits[4] = add(bit_slice.76, concat.77, id=79, pos=[(0,7,5)])
+  ret concat.80: bits[8] = concat(literal.78, add.79, id=80, pos=[(0,7,16)])
 }
