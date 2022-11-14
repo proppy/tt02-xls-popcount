@@ -59,7 +59,7 @@ jobs:
           src/user_module.ir
           src/user_module_opt.ir
           src/user_module.v
-        key: ${{ runner.os }}-${{ env.CACHE_NUMBER }}-rtl-${{ hashFiles('src/user_module.v') }}
+        key: ${{ runner.os }}-${{ env.CACHE_NUMBER }}-rtl-${{ github.run_id }}
   
   gds:
     needs:
@@ -102,7 +102,7 @@ jobs:
           src/user_module.ir
           src/user_module_opt.ir
           src/user_module.v
-        key: ${{ runner.os }}-${{ env.CACHE_NUMBER }}-rtl-${{ hashFiles('src/user_module.v') }}      
+        key: ${{ runner.os }}-${{ env.CACHE_NUMBER }}-rtl-${{ github.run_id }}
 
     # fetch the Verilog from Wokwi API
     - name: fetch Verilog and build config
@@ -231,13 +231,13 @@ jobs:
           src/user_module.ir
           src/user_module_opt.ir
           src/user_module.v
-        key: ${{ runner.os }}-${{ env.CACHE_NUMBER }}-rtl-${{ hashFiles('src/user_module.v') }}
+        key: ${{ runner.os }}-${{ env.CACHE_NUMBER }}-rtl-${{ github.run_id }}
 
     - name: commit generated rtl
       run: |
         git config --local user.name "tinybot"
         git config --local user.email "bot@tinytapeout.com"
-        git add src/user_module.v src/user_module.ir src/user_module_opt.ir
+        git add src/
         git commit -m "src: generated user module [skip ci]" || true
         git push origin main
     
